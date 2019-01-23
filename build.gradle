@@ -30,3 +30,7 @@ dependencies {
 // tag::wrapper[]
 
 // end::wrapper[]
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
