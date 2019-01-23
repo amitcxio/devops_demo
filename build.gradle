@@ -1,16 +1,31 @@
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
 
-repositories {
-   jcenter()
+mainClassName = ''
+
+// tag::repositories[]
+repositories { 
+    mavenCentral() 
 }
+// end::repositories[]
+
+// tag::jar[]
+jar {
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
-   compile 'org.slf4j:slf4j-api:1.7.12'
-   testCompile 'junit:junit:4.12'
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
 }
+// end::dependencies[]
 
-jar {
-   manifest {
-      attributes 'Main-Class': 'com.example.main.Application'
-   }
-}
+// tag::wrapper[]
+// end::wrapper[]
